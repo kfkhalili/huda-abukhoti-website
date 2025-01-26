@@ -49,11 +49,11 @@ export default function Uses() {
         <ToolsSection title="Workstation">
           <Tool title="iPhone 16 Pro Max">
             It always surprises people that I rely on a phone as my main
-            workstation, The smaller form factor makes sense if you're focused
-            on social media and it helps me keep designs concise and visually
-            striking, exactly the way they’ll appear in someone’s feed. It’s
-            always within reach, so I’m never far from inspiration-or a
-            deadline.
+            workstation, The smaller form factor makes sense if you&apos;re
+            focused on social media and it helps me keep designs concise and
+            visually striking, exactly the way they&apos;ll appear in
+            someone&apos;s feed. It&apos;s always within reach, so I&apos;m
+            never far from inspiration-or a deadline.
           </Tool>
           <Tool title="iPad Pro 12.9” 5th Gen">
             For whenever I need more room to sketch or prototype. A paper-like
@@ -63,8 +63,8 @@ export default function Uses() {
           <Tool title="MacBook Air 2020">
             It might be a little dated, but it still handles everyday tasks like
             a champ and can even keep up with heavier design software when
-            deadlines loom. Definitely a reminder that you don’t always need the
-            newest gear to get real work done.
+            deadlines loom. Definitely a reminder that you don&apos;t always
+            need the newest gear to get real work done.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Art & Design">
@@ -91,14 +91,14 @@ export default function Uses() {
         </ToolsSection>
         <ToolsSection title="AI">
           <Tool title="ChatGPT">
-            I bounce ideas off it when I’m stuck on a creative direction or need
-            quick copy suggestions. It’s like having a brainstorming buddy who’s
-            always on call.
+            I bounce ideas off it when I&apos;m stuck on a creative direction or
+            need quick copy suggestions. It&apos;s like having a brainstorming
+            buddy who&apos;s always on call.
           </Tool>
           <Tool title="Runway ML">
             Video work can be a time sink, so any help with rotoscoping and
-            background removal is a major win. I’m always blown away by how much
-            time I save now.
+            background removal is a major win. I&apos;m always blown away by how
+            much time I save now.
           </Tool>
         </ToolsSection>
       </div>

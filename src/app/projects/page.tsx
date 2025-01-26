@@ -32,7 +32,7 @@ const projects = [
   {
     name: 'Azm Brand',
     description:
-      'Created engaging and visually appealing social media content to reflect Azm’s brand messaging to empower people with disabilities.',
+      "Created engaging and visually appealing social media content to reflect Azm's brand messaging to empower people with disabilities.",
     link: { href: 'https://www.instagram.com/azm.brand/', label: 'instagram' },
     logo: logoAzm,
   },
