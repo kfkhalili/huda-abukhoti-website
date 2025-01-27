@@ -7,6 +7,7 @@ import logoTrendOnSocial from '@/images/logos/trend-on-social.png'
 import logoAlJisr from '@/images/logos/al-jisr-foundation.png'
 import logoAzm from '@/images/logos/azm.png'
 import logoJustHome from '@/images/logos/just-home.png'
+import logoHalalAda from '@/images/logos/halal-ada.png'
 
 const projects = [
   {
@@ -28,6 +29,15 @@ const projects = [
       label: 'instagram',
     },
     logo: logoAlJisr,
+  },
+  {
+    name: 'Halal ADA',
+    description: 'Typography and logo design, for a fintech crypto initiative.',
+    link: {
+      href: 'https://www.halalada.com',
+      label: 'website',
+    },
+    logo: logoHalalAda,
   },
   {
     name: 'Azm Brand',
