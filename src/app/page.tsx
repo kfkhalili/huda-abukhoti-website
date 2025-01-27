@@ -121,7 +121,7 @@ function Resume() {
       },
     },
     {
-      company: 'Sharjah Ladies Club',
+      company: 'Sharjah Government',
       title: 'Senior Marketing Executive',
       logo: logoSharjahLadies,
       start: '2016',
@@ -171,7 +171,7 @@ function Photos() {
           <div
             key={image.src}
             className={clsx(
-              'relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
+              'relative aspect-15/16 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
               rotations[imageIndex % rotations.length],
             )}
           >
