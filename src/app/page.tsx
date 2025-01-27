@@ -111,7 +111,7 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Trend on Social',
+      company: 'Trend on Social — Germany',
       title: 'Founder',
       logo: logoTrendOnSocial,
       start: '2020',
@@ -121,14 +121,14 @@ function Resume() {
       },
     },
     {
-      company: 'Sharjah Government',
+      company: 'Sharjah Government — UAE',
       title: 'Senior Marketing Executive',
       logo: logoSharjahLadies,
       start: '2016',
       end: '2020',
     },
     {
-      company: 'Al Ghurair Construction',
+      company: 'Al Ghurair Construction — UAE',
       title: 'Design Engineer',
       logo: logoAlGhurair,
       start: '2015',
