@@ -4,8 +4,13 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import { InstagramIcon, LinkedInIcon } from '@/components/SocialIcons'
+import {
+  CalendarIcon,
+  InstagramIcon,
+  LinkedInIcon,
+} from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
+import CalendarEmbed from '@/components/CalendarEmbed'
 
 function SocialLink({
   className,
@@ -106,6 +111,9 @@ export default function About() {
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
               hudaabukhoti@gmail.com
+            </SocialLink>
+            <SocialLink href="/schedule" icon={CalendarIcon} className="mt-4">
+              Schedule an appointment
             </SocialLink>
           </ul>
         </div>
