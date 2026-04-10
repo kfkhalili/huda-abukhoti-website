@@ -1,17 +1,19 @@
 'use client'
 
-import { createContext, useEffect, useRef } from 'react'
+import { createContext, useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { ThemeProvider, useTheme } from 'next-themes'
 
 function usePrevious<T>(value: T) {
-  let ref = useRef<T>()
+  let ref = useRef<T | undefined>(undefined)
+  let [previous, setPrevious] = useState<T | undefined>(undefined)
 
   useEffect(() => {
+    setPrevious(ref.current)
     ref.current = value
   }, [value])
 
-  return ref.current
+  return previous
 }
 
 function ThemeWatcher() {

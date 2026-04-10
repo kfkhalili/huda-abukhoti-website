@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
@@ -47,13 +48,14 @@ function Tool({
     <Card as="li">
       <Card.Title as="h3" href={href}>
         {lightLogoSrc && (
-          <img
+          <Image
             key={`${title}-light-logo-img`}
             src={lightLogoSrc}
             alt={`${title} logo`}
             className="mr-3 inline-block h-6 w-6 align-middle dark:hidden"
-            width="24"
-            height="24"
+            width={24}
+            height={24}
+            unoptimized
           />
         )}
         {lightLogoNode && (
@@ -65,13 +67,14 @@ function Tool({
           </span>
         )}
         {darkLogoSrc && (
-          <img
+          <Image
             key={`${title}-dark-logo-img`}
             src={darkLogoSrc}
             alt={`${title} logo`}
             className="mr-3 hidden h-6 w-6 align-middle dark:inline-block"
-            width="24"
-            height="24"
+            width={24}
+            height={24}
+            unoptimized
           />
         )}
         {darkLogoNode && (

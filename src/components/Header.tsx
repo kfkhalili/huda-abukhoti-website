@@ -178,7 +178,7 @@ function ThemeToggle() {
   let [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
+    queueMicrotask(() => setMounted(true))
   }, [])
 
   return (
