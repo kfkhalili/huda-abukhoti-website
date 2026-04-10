@@ -231,30 +231,6 @@ export default function Uses() {
             endless versions floating around in my inbox.
           </Tool>
         </ToolsSection>
-        <ToolsSection title="AI">
-          <Tool
-            title="ChatGPT"
-            logo={{
-              light: 'https://svgl.app/library/openai.svg', // Keeps colored version for light
-              dark: 'https://cdn.simpleicons.org/openai/FFFFFF',
-            }}
-          >
-            I bounce ideas off it when I&apos;m stuck on a creative direction or
-            need quick copy suggestions. It&apos;s like having a brainstorming
-            buddy who&apos;s always on call.
-          </Tool>
-          <Tool
-            title="Runway ML"
-            logo={{
-              light: 'https://svgl.app/library/runway.svg', // Keeps black version for light
-              dark: 'https://svgl.app/library/runway.svg',
-            }}
-          >
-            Video work can be a time sink, so any help with rotoscoping and
-            background removal is a major win. I&apos;m always blown away by how
-            much time I save now.
-          </Tool>
-        </ToolsSection>
       </div>
     </SimpleLayout>
   )
