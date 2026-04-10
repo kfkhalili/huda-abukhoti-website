@@ -187,9 +187,10 @@ export default async function Home() {
             Artist, Designer, and Entrepreneur.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&apos;m Huda, a Digital Marketing Consultant based in Munich.
-            I&apos;m the founder of Trend on Social, an experimental platform
-            for insights on marketing and social media strategies.
+            Hello! I’m Huda, a Munich-based Digital Marketing Consultant with a
+            passion for figuring out what makes great creative content. I like to
+            test new ideas, break down trends, and share the marketing
+            strategies that actually work.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
