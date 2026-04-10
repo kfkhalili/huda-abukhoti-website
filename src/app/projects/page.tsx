@@ -5,11 +5,22 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoTrendOnSocial from '@/images/logos/trend-on-social.png'
 import logoAlJisr from '@/images/logos/al-jisr-foundation.png'
+import logoAlBasma from '@/images/logos/al-basma-foundation.png'
 import logoAzm from '@/images/logos/azm.png'
 import logoJustHome from '@/images/logos/just-home.png'
 import logoHalalAda from '@/images/logos/halal-ada.png'
 
 const projects = [
+  {
+    name: 'Al Basma Foundation',
+    description:
+      'Social media strategy and content creation and planning, crafted for maximum engagement and societal impact.',
+    link: {
+      href: 'https://www.instagram.com/albasma_foundation/',
+      label: 'instagram',
+    },
+    logo: logoAlBasma,
+  },
   {
     name: 'Trend on Social',
     description:
