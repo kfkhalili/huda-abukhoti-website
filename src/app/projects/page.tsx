@@ -16,8 +16,8 @@ const projects = [
     description:
       'Social media strategy and content creation and planning, crafted for maximum engagement and societal impact.',
     link: {
-      href: 'https://www.instagram.com/albasma_foundation/',
-      label: 'instagram',
+      href: 'https://albasmafoundation.org/',
+      label: 'website',
     },
     logo: logoAlBasma,
   },
@@ -36,8 +36,8 @@ const projects = [
     description:
       'Social media strategy and content creation and planning, crafted for maximum engagement and societal impact.',
     link: {
-      href: 'https://www.instagram.com/jisrfoundation/',
-      label: 'instagram',
+      href: 'https://aljisrfoundation.org/en',
+      label: 'website',
     },
     logo: logoAlJisr,
   },
