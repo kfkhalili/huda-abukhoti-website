@@ -178,6 +178,9 @@ export default async function Home() {
     <>
       <Container className="mt-9">
         <div className="max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-400">
+            Huda Abukhoti
+          </p>
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             Artist, Designer, and Storyteller.
           </h1>
