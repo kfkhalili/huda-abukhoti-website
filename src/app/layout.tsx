@@ -8,7 +8,7 @@ import '@/styles/tailwind.css'
 export const metadata: Metadata = {
   title: {
     template: '%s - Huda Abukhoti',
-    default: 'Huda Abukhoti - Artist, Designer, and Entrepreneur.',
+    default: 'Huda Abukhoti - Artist, Designer, and Storyteller.',
   },
   description:
     'I’m Huda, a Digital Marketing Consultant based in Munich. I’m the founder of Trend on Social, an experimental platform for insights on marketing and social media strategies.',
