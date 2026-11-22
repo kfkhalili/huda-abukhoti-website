@@ -9,8 +9,19 @@ import logoAlBasma from '@/images/logos/al-basma-foundation.png'
 import logoAzm from '@/images/logos/azm.png'
 import logoJustHome from '@/images/logos/just-home.png'
 import logoHalalAda from '@/images/logos/halal-ada.png'
+import logoZallija from '@/images/logos/zallija.png'
 
 const projects = [
+  {
+    name: 'Zallija',
+    description:
+      'Co-founder, managing social media for a browser-based studio where anyone can design authentic Islamic geometric patterns.',
+    link: {
+      href: 'https://www.zallija.com',
+      label: 'website',
+    },
+    logo: logoZallija,
+  },
   {
     name: 'Al Basma Foundation',
     description:
