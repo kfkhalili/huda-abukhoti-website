@@ -17,8 +17,8 @@ const projects = [
     description:
       'Co-founder, managing social media for a browser-based studio where anyone can design authentic Islamic geometric patterns.',
     link: {
-      href: 'https://www.zallija.com',
-      label: 'website',
+      href: '/projects/zallija',
+      label: 'case study',
     },
     logo: logoZallija,
   },
