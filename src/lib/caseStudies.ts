@@ -2,6 +2,7 @@ import { type Metadata } from 'next'
 import { type StaticImageData } from 'next/image'
 
 import alBasmaCover from '@/images/case-studies/al-basma/cover.jpg'
+import alBasmaLogo from '@/images/case-studies/al-basma/logo.png'
 import halalAdaCover from '@/images/case-studies/halal-ada/cover.jpg'
 import justhomeCover from '@/images/case-studies/justhome/cover.jpg'
 import justhomeLogo from '@/images/case-studies/justhome/logo-horizontal.png'
@@ -21,8 +22,9 @@ export interface CaseStudy {
   colour: { background: string; foreground: string }
   cover: StaticImageData
   coverAlt: string
-  // The horizontal logo, coloured to sit on `colour.background`. The homepage
-  // cover shows it whole instead of a crop of the cover.
+  // The logo (the horizontal one where the brand has it), in one colour that
+  // sits on `colour.background`. The homepage cover shows it whole instead of
+  // a crop of the cover.
   logo?: StaticImageData
 }
 
@@ -55,6 +57,7 @@ export const caseStudies: Array<CaseStudy> = [
     cover: alBasmaCover,
     coverAlt:
       'Three Al Basma Foundation posts in navy, sky blue and yellow, side by side.',
+    logo: alBasmaLogo,
   },
   {
     slug: 'justhome',

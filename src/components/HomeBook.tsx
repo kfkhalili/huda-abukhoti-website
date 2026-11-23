@@ -302,7 +302,7 @@ export function HomeBook({
                               style={{ backgroundColor: item.background }}
                             >
                               {item.logo ? (
-                                // The whole horizontal logo, never cropped.
+                                // The whole logo, never cropped.
                                 <span className="flex aspect-[8/5] w-full items-center justify-center px-[16%] py-[9%] lg:aspect-auto lg:h-[16svh]">
                                   <Image
                                     src={item.logo}
