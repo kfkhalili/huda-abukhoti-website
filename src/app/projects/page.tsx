@@ -1,7 +1,7 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 
-import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { caseStudies } from '@/lib/caseStudies'
 import logoTrendOnSocial from '@/images/logos/trend-on-social.png'
@@ -46,12 +46,15 @@ const moreProjects = [
   },
 ]
 
-function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
-        d="M15.712 11.823a.75.75 0 1 0 1.06 1.06l-1.06-1.06Zm-4.95 1.768a.75.75 0 0 0 1.06-1.06l-1.06 1.06Zm-2.475-1.414a.75.75 0 1 0-1.06-1.06l1.06 1.06Zm4.95-1.768a.75.75 0 1 0-1.06 1.06l1.06-1.06Zm3.359.53-.884.884 1.06 1.06.885-.883-1.061-1.06Zm-4.95-2.12 1.414-1.415L12 6.344l-1.415 1.413 1.061 1.061Zm0 3.535a2.5 2.5 0 0 1 0-3.536l-1.06-1.06a4 4 0 0 0 0 5.656l1.06-1.06Zm4.95-4.95a2.5 2.5 0 0 1 0 3.535L17.656 12a4 4 0 0 0 0-5.657l-1.06 1.06Zm1.06-1.06a4 4 0 0 0-5.656 0l1.06 1.06a2.5 2.5 0 0 1 3.536 0l1.06-1.06Zm-7.07 7.07.176.177 1.06-1.06-.176-.177-1.06 1.06Zm-3.183-.353.884-.884-1.06-1.06-.884.883 1.06 1.06Zm4.95 2.121-1.414 1.414 1.06 1.06 1.415-1.413-1.06-1.061Zm0-3.536a2.5 2.5 0 0 1 0 3.536l1.06 1.06a4 4 0 0 0 0-5.656l-1.06 1.06Zm-4.95 4.95a2.5 2.5 0 0 1 0-3.535L6.344 12a4 4 0 0 0 0 5.656l1.06-1.06Zm-1.06 1.06a4 4 0 0 0 5.657 0l-1.061-1.06a2.5 2.5 0 0 1-3.535 0l-1.061 1.06Zm7.07-7.07-.176-.177-1.06 1.06.176.178 1.06-1.061Z"
-        fill="currentColor"
+        d="M3 8h10m0 0L9 4m4 4-4 4"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   )
@@ -71,67 +74,90 @@ export default function Projects() {
       <section aria-labelledby="case-studies">
         <h2
           id="case-studies"
-          className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100"
+          className="text-2xl font-semibold tracking-tight text-ink dark:text-zinc-100"
         >
           Case studies
         </h2>
         <ul
           role="list"
-          className="mt-10 grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2"
+          className="mt-10 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2"
         >
           {caseStudies.map((caseStudy) => (
-            <Card as="li" key={caseStudy.slug}>
-              <Image
-                src={caseStudy.cover}
-                alt={caseStudy.coverAlt}
-                sizes="(min-width: 1024px) 30rem, (min-width: 640px) 50vw, 100vw"
-                placeholder="blur"
-                className="relative z-10 aspect-[8/5] w-full rounded-2xl object-cover ring-1 ring-zinc-900/5 dark:ring-white/10"
-              />
-              <p className="relative z-10 mt-6 text-sm text-zinc-500 dark:text-zinc-400">
-                {caseStudy.client}
-              </p>
-              <h3 className="mt-1 text-lg font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={`/projects/${caseStudy.slug}`}>
-                  {caseStudy.title}
-                </Card.Link>
-              </h3>
-              <Card.Description>{caseStudy.summary}</Card.Description>
-              <Card.Cta>Read the case study</Card.Cta>
-            </Card>
+            <li key={caseStudy.slug} className="group relative">
+              <div
+                className="h-full rounded-3xl p-4 transition duration-500 group-hover:-translate-y-1 sm:p-5"
+                style={{
+                  backgroundColor: caseStudy.colour.background,
+                  color: caseStudy.colour.foreground,
+                }}
+              >
+                <div className="overflow-hidden rounded-2xl">
+                  <Image
+                    src={caseStudy.cover}
+                    alt={caseStudy.coverAlt}
+                    sizes="(min-width: 1024px) 30rem, (min-width: 640px) 50vw, 100vw"
+                    placeholder="blur"
+                    className="aspect-[8/5] w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="mt-5 flex items-baseline justify-between gap-4 px-1">
+                  <p className="text-sm opacity-75">{caseStudy.client}</p>
+                  <p className="text-sm tabular-nums opacity-75">
+                    {caseStudy.year}
+                  </p>
+                </div>
+                <h3 className="mt-1 px-1 text-2xl font-semibold tracking-tight">
+                  <Link href={`/projects/${caseStudy.slug}`}>
+                    <span className="absolute inset-0 z-10" />
+                    {caseStudy.title}
+                  </Link>
+                </h3>
+                <p className="mt-3 px-1 pb-1 text-sm/6 opacity-80">
+                  {caseStudy.summary}
+                </p>
+              </div>
+            </li>
           ))}
         </ul>
       </section>
       <section aria-labelledby="more-work" className="mt-24 sm:mt-32">
         <h2
           id="more-work"
-          className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100"
+          className="text-2xl font-semibold tracking-tight text-ink dark:text-zinc-100"
         >
           More work
         </h2>
         <ul
           role="list"
-          className="mt-10 grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-10 border-t border-ink/15 dark:border-white/15"
         >
           {moreProjects.map((project) => (
-            <Card as="li" key={project.name}>
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+            <li
+              key={project.name}
+              className="group relative grid grid-cols-[2.5rem_1fr] items-center gap-x-4 gap-y-2 border-b border-ink/15 py-5 sm:grid-cols-[2.5rem_14rem_1fr_auto] sm:gap-x-6 dark:border-white/15"
+            >
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white ring-1 ring-ink/10 dark:bg-zinc-800 dark:ring-white/10">
                 <Image
                   src={project.logo}
                   alt=""
                   sizes="2rem"
-                  className="h-8 w-8"
+                  className="h-7 w-7"
                 />
-              </div>
-              <h3 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href}>{project.name}</Card.Link>
+              </span>
+              <h3 className="text-lg font-semibold tracking-tight text-ink dark:text-zinc-100">
+                <Link href={project.link.href}>
+                  <span className="absolute inset-0 z-10" />
+                  {project.name}
+                </Link>
               </h3>
-              <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">{project.link.label}</span>
+              <p className="col-span-2 text-sm text-zinc-600 sm:col-span-1 dark:text-zinc-400">
+                {project.description}
               </p>
-            </Card>
+              <span className="col-span-2 inline-flex items-center gap-2 text-sm font-medium text-ink transition group-hover:text-accent-500 sm:col-span-1 sm:justify-self-end dark:text-zinc-100 dark:group-hover:text-accent-400">
+                {project.link.label}
+                <ArrowIcon className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              </span>
+            </li>
           ))}
         </ul>
       </section>
