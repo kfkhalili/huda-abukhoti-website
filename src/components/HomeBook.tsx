@@ -301,13 +301,25 @@ export function HomeBook({
                               className="block overflow-hidden rounded-xl"
                               style={{ backgroundColor: item.background }}
                             >
-                              <Image
-                                src={item.cover}
-                                alt=""
-                                sizes="(min-width: 1024px) 22vw, 50vw"
-                                placeholder="blur"
-                                className="aspect-[8/5] w-full object-cover transition duration-500 group-hover:scale-[1.04] lg:aspect-auto lg:h-[16svh]"
-                              />
+                              {item.logo ? (
+                                // The whole horizontal logo, never cropped.
+                                <span className="flex aspect-[8/5] w-full items-center justify-center px-[16%] py-[9%] lg:aspect-auto lg:h-[16svh]">
+                                  <Image
+                                    src={item.logo}
+                                    alt=""
+                                    sizes="(min-width: 1024px) 16vw, 35vw"
+                                    className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.04]"
+                                  />
+                                </span>
+                              ) : (
+                                <Image
+                                  src={item.cover}
+                                  alt=""
+                                  sizes="(min-width: 1024px) 22vw, 50vw"
+                                  placeholder="blur"
+                                  className="aspect-[8/5] w-full object-cover transition duration-500 group-hover:scale-[1.04] lg:aspect-auto lg:h-[16svh]"
+                                />
+                              )}
                             </span>
                             <span className="mt-2 flex items-baseline gap-2 text-sm">
                               <span className="text-zinc-500 tabular-nums">
@@ -402,18 +414,21 @@ export function HomeBook({
                     'flex flex-col justify-center gap-8 bg-accent-50 text-ink dark:bg-[#1b1a18] dark:text-zinc-100',
                   )}
                 >
-                  <div className="flex flex-wrap items-end justify-between gap-4">
+                  <div>
+                    {chapter(index)}
                     <h2
                       id="page-posts"
-                      className="text-4xl leading-[0.95] font-semibold tracking-[-0.04em] sm:text-5xl xl:text-6xl"
+                      className="mt-4 text-4xl leading-[0.95] font-semibold tracking-[-0.04em] sm:text-5xl xl:text-6xl"
                     >
                       Posts, packaging and illustration
                     </h2>
-                    {chapter(index)}
                   </div>
+                  {/* Posts keep their 4:5 shape. On large screens the grid
+                      narrows so two rows fit above the page bar: each post is
+                      at most 40svh − 151px wide, five per row. */}
                   <ul
                     role="list"
-                    className="grid grid-cols-2 gap-3 sm:grid-cols-5 lg:gap-4"
+                    className="grid grid-cols-2 gap-3 sm:grid-cols-5 lg:max-w-[calc(200svh_-_691px)] lg:gap-4"
                   >
                     {posts.map((post) => (
                       <li
@@ -424,7 +439,7 @@ export function HomeBook({
                           src={post.src}
                           alt={post.alt}
                           sizes="(min-width: 640px) 20vw, 50vw"
-                          className="aspect-square w-full object-cover lg:aspect-auto lg:h-[29svh]"
+                          className="aspect-[4/5] w-full object-cover"
                         />
                       </li>
                     ))}

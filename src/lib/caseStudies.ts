@@ -4,8 +4,11 @@ import { type StaticImageData } from 'next/image'
 import alBasmaCover from '@/images/case-studies/al-basma/cover.jpg'
 import halalAdaCover from '@/images/case-studies/halal-ada/cover.jpg'
 import justhomeCover from '@/images/case-studies/justhome/cover.jpg'
+import justhomeLogo from '@/images/case-studies/justhome/logo-horizontal.png'
 import medadCover from '@/images/case-studies/medad/cover.jpg'
+import medadLogo from '@/images/case-studies/medad/logo-horizontal.png'
 import zallijaCover from '@/images/case-studies/zallija/cover.jpg'
+import zallijaLogo from '@/images/case-studies/zallija/logo-horizontal.png'
 
 export interface CaseStudy {
   slug: string
@@ -18,6 +21,9 @@ export interface CaseStudy {
   colour: { background: string; foreground: string }
   cover: StaticImageData
   coverAlt: string
+  // The horizontal logo, coloured to sit on `colour.background`. The homepage
+  // cover shows it whole instead of a crop of the cover.
+  logo?: StaticImageData
 }
 
 // The case studies shown as cards on the Projects page, in this order. It is
@@ -35,6 +41,7 @@ export const caseStudies: Array<CaseStudy> = [
     cover: medadCover,
     coverAlt:
       'The Medad logo in white on deep violet, with an illustrated hand pointing to it.',
+    logo: medadLogo,
   },
   {
     slug: 'al-basma-foundation',
@@ -61,6 +68,7 @@ export const caseStudies: Array<CaseStudy> = [
     cover: justhomeCover,
     coverAlt:
       'The Justhome J icon, a white circle and a tall white J, on morning green.',
+    logo: justhomeLogo,
   },
   {
     slug: 'zallija',
@@ -74,6 +82,7 @@ export const caseStudies: Array<CaseStudy> = [
     cover: zallijaCover,
     coverAlt:
       'Cover of the Zallija brand guide: pale pattern lines on dark ink, one tile filled in orange, and the Zallija logo in cream.',
+    logo: zallijaLogo,
   },
 ]
 

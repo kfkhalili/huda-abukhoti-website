@@ -10,7 +10,7 @@ import image5 from '@/images/photos/photo-grid-5.jpg'
 import image6 from '@/images/photos/photo-grid-6.png'
 import image7 from '@/images/photos/photo-grid-7.png'
 import image8 from '@/images/photos/photo-grid-8.png'
-import image9 from '@/images/photos/photo-grid-9.jpg'
+import image9 from '@/images/photos/photo-grid-9-4x5.jpg'
 import image10 from '@/images/photos/photo-grid-10.jpg'
 import portrait from '@/images/portrait.jpg'
 
