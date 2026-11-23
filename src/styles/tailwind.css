@@ -72,14 +72,15 @@
 }
 
 /* On large screens the homepage book settles on a whole page when scrolling
-   stops. HomeBook adds the class and one snap point per page; the footer is
-   the last stop. */
+   stops. Snapping is on only while the book's snap points are on the page, so
+   it ends the moment another page replaces the homepage. The footer is the
+   last stop. */
 @media (min-width: 1024px) {
-  html.book-snap {
+  html:has(.book-snap-points) {
     scroll-snap-type: y mandatory;
   }
 
-  html.book-snap footer {
+  html:has(.book-snap-points) footer {
     scroll-snap-align: end;
   }
 }

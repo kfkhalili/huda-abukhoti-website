@@ -124,13 +124,6 @@ export function HomeBook({
     [projects],
   )
 
-  // While the book is on screen, the page scroll snaps to its pages.
-  useEffect(() => {
-    let root = document.documentElement
-    root.classList.add('book-snap')
-    return () => root.classList.remove('book-snap')
-  }, [])
-
   useEffect(() => {
     let frame = 0
 
@@ -216,14 +209,17 @@ export function HomeBook({
   return (
     <div
       ref={book}
-      className="relative lg:h-[var(--book-height)]"
+      // On large screens the book starts under the header (h-20), so its
+      // first page rests at the very top of the page.
+      className="relative lg:-mt-20 lg:h-[var(--book-height)]"
       style={{ '--book-height': `${count * 100}svh` } as React.CSSProperties}
     >
       {/* One snap point per page: on large screens, scrolling settles on a
-          whole page instead of stopping between two (see `html.book-snap`). */}
+          whole page instead of stopping between two. Snapping is on only
+          while these are on the page (see `.book-snap-points` in the CSS). */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 hidden lg:block"
+        className="book-snap-points pointer-events-none absolute inset-x-0 top-0 hidden lg:block"
       >
         {pages.map((page) => (
           <div key={page.key} className="h-svh snap-start" />
