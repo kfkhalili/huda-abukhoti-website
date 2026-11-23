@@ -78,11 +78,13 @@ function NavItem({ href, children }: { href: string; children: string }) {
       <Link
         href={href}
         aria-current={isActive ? 'page' : undefined}
+        // On white pages the link turns cobalt. Cobalt is hard to read on a
+        // project's colour, so there the link keeps its colour and gets a line.
         className={clsx(
-          'block px-3 py-2 transition',
+          'block px-3 py-2 underline decoration-2 underline-offset-[6px] transition',
           isActive
-            ? 'text-accent-500 dark:text-accent-400'
-            : 'hover:text-accent-500 dark:hover:text-accent-400',
+            ? 'text-[color:var(--page-fg,var(--color-accent-500))] decoration-[color:var(--page-fg,transparent)] dark:text-[color:var(--page-fg,var(--color-accent-400))]'
+            : 'decoration-transparent hover:text-[color:var(--page-fg,var(--color-accent-500))] hover:decoration-[color:var(--page-fg,transparent)] dark:hover:text-[color:var(--page-fg,var(--color-accent-400))]',
         )}
       >
         {children}
@@ -166,7 +168,7 @@ function ThemeToggle() {
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-[color-mix(in_srgb,var(--page-bg,#f6f3ee)_85%,transparent)] text-[color:var(--page-fg,#171615)] backdrop-blur-md transition-colors duration-500 dark:bg-[color-mix(in_srgb,var(--page-bg,#121110)_85%,transparent)] dark:text-[color:var(--page-fg,#f4f4f5)]">
+    <header className="sticky top-0 z-50 bg-[color-mix(in_srgb,var(--page-bg,#ffffff)_85%,transparent)] text-[color:var(--page-fg,#171615)] backdrop-blur-md transition-colors duration-500 dark:bg-[color-mix(in_srgb,var(--page-bg,#121110)_85%,transparent)] dark:text-[color:var(--page-fg,#f4f4f5)]">
       <ContainerWide>
         <div className="flex h-16 items-center justify-between gap-6 sm:h-20">
           <Link href="/" className="text-base font-semibold tracking-tight">
@@ -184,7 +186,7 @@ export function Header() {
             </nav>
             <Link
               href="/schedule"
-              className="hidden rounded-full bg-[color:var(--page-fg,#171615)] px-4 py-2 text-sm font-medium text-[color:var(--page-bg,#f6f3ee)] transition hover:bg-accent-500 hover:text-paper md:inline-flex dark:bg-[color:var(--page-fg,#f4f4f5)] dark:text-[color:var(--page-bg,#121110)] dark:hover:bg-accent-400"
+              className="hidden rounded-full bg-[color:var(--page-fg,var(--color-accent-500))] px-4 py-2 text-sm font-medium text-[color:var(--page-bg,#ffffff)] transition hover:bg-accent-600 hover:text-white md:inline-flex"
             >
               Book a call
             </Link>

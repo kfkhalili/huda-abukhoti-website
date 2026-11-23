@@ -23,8 +23,8 @@ type Page = {
 }
 
 const INK = '#171615'
-const PAPER = '#f6f3ee'
-const CONTACT = '#a8461f'
+const WHITE = '#ffffff'
+const COBALT = '#0047ab'
 
 function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -87,13 +87,13 @@ export function HomeBook({
       foreground: project.foreground,
     })),
     { key: 'posts', label: 'Posts' },
-    { key: 'services', label: 'Services', background: INK, foreground: PAPER },
+    { key: 'services', label: 'Services', background: INK, foreground: WHITE },
     { key: 'about', label: 'About' },
     {
       key: 'contact',
       label: 'Contact',
-      background: CONTACT,
-      foreground: PAPER,
+      background: COBALT,
+      foreground: WHITE,
     },
   ]
   let count = pages.length
@@ -263,7 +263,7 @@ export function HomeBook({
                           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60 motion-reduce:animate-none" />
                           <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                         </span>
-                        Open to new projects and full-time roles
+                        Open to new projects
                         <span className="font-normal text-zinc-500">
                           · Munich, Germany
                         </span>
@@ -399,7 +399,7 @@ export function HomeBook({
                   aria-labelledby="page-posts"
                   className={clsx(
                     pageClass,
-                    'flex flex-col justify-center gap-8 bg-[#ede6da] text-ink dark:bg-[#1b1a18] dark:text-zinc-100',
+                    'flex flex-col justify-center gap-8 bg-accent-50 text-ink dark:bg-[#1b1a18] dark:text-zinc-100',
                   )}
                 >
                   <div className="flex flex-wrap items-end justify-between gap-4">
@@ -567,13 +567,13 @@ export function HomeBook({
                 <div className="mt-10 flex flex-wrap gap-4">
                   <Link
                     href="/schedule"
-                    className="inline-flex items-center rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink transition hover:bg-white"
+                    className="inline-flex items-center rounded-full bg-white px-5 py-2.5 text-sm font-medium text-accent-500 transition hover:bg-accent-50"
                   >
                     Book a call
                   </Link>
                   <a
                     href="https://www.linkedin.com/in/hudaabukhoti/"
-                    className="inline-flex items-center rounded-full px-5 py-2.5 text-sm font-medium ring-1 ring-current transition hover:bg-paper hover:text-ink"
+                    className="inline-flex items-center rounded-full px-5 py-2.5 text-sm font-medium ring-1 ring-current transition hover:bg-white hover:text-accent-500"
                   >
                     LinkedIn
                   </a>

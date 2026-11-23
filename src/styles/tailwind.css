@@ -10,14 +10,14 @@
   --font-sans: var(--font-plex-sans), var(--font-plex-arabic), ui-sans-serif,
     system-ui, sans-serif;
 
-  --color-paper: #f6f3ee;
+  --color-paper: #ffffff;
   --color-ink: #171615;
 
-  --color-accent-50: #fbf1ec;
-  --color-accent-300: #eba483;
-  --color-accent-400: #dc7a50;
-  --color-accent-500: #b9532a;
-  --color-accent-600: #9a4220;
+  --color-accent-50: #eef3fc;
+  --color-accent-300: #93b4ee;
+  --color-accent-400: #5b8ce6;
+  --color-accent-500: #0047ab;
+  --color-accent-600: #003a8f;
 
   --animate-marquee: marquee 45s linear infinite;
   --animate-marquee-slow: marquee 80s linear infinite;

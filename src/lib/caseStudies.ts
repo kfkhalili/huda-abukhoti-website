@@ -26,7 +26,7 @@ export const caseStudies: Array<CaseStudy> = [
   {
     slug: 'medad',
     year: '2025',
-    colour: { background: '#372264', foreground: '#f6f3ee' },
+    colour: { background: '#372264', foreground: '#ffffff' },
     client: 'Medad, a programme of Al Jisr Foundation',
     title: 'Medad brand identity',
     summary:
