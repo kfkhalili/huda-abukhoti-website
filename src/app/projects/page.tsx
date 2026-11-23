@@ -3,35 +3,12 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import { caseStudies } from '@/lib/caseStudies'
 import logoTrendOnSocial from '@/images/logos/trend-on-social.png'
 import logoAlJisr from '@/images/logos/al-jisr-foundation.png'
-import logoAlBasma from '@/images/logos/al-basma-foundation.png'
 import logoAzm from '@/images/logos/azm.png'
-import logoJustHome from '@/images/logos/just-home.png'
-import logoHalalAda from '@/images/logos/halal-ada.png'
-import logoZallija from '@/images/logos/zallija.png'
 
-const projects = [
-  {
-    name: 'Zallija',
-    description:
-      'Co-founder, managing social media for a browser-based studio where anyone can design authentic Islamic geometric patterns.',
-    link: {
-      href: '/projects/zallija',
-      label: 'case study',
-    },
-    logo: logoZallija,
-  },
-  {
-    name: 'Al Basma Foundation',
-    description:
-      'Social media strategy and content creation and planning, crafted for maximum engagement and societal impact.',
-    link: {
-      href: 'https://albasmafoundation.org/',
-      label: 'website',
-    },
-    logo: logoAlBasma,
-  },
+const moreProjects = [
   {
     name: 'Trend on Social',
     description:
@@ -53,27 +30,11 @@ const projects = [
     logo: logoAlJisr,
   },
   {
-    name: 'Halal ADA',
-    description: 'Typography and logo design, for a fintech crypto initiative.',
-    link: {
-      href: 'https://www.halalada.com',
-      label: 'website',
-    },
-    logo: logoHalalAda,
-  },
-  {
     name: 'Azm Brand',
     description:
       "Created engaging and visually appealing social media content to reflect Azm's brand messaging to empower people with disabilities.",
     link: { href: 'https://www.instagram.com/azm.brand/', label: 'instagram' },
     logo: logoAzm,
-  },
-  {
-    name: 'Justhome',
-    description:
-      'Comprehensive branding and design, from logo creation to website proposal, ensuring a standout identity in real estate.',
-    link: { href: 'https://justhome.com', label: 'website' },
-    logo: logoJustHome,
   },
 ]
 
@@ -99,31 +60,73 @@ export default function Projects() {
       title="Creative collaboration to make an Impact."
       intro="Over the years, I’ve contributed to numerous meaningful projects that aim to leave a positive mark on the world. These are some of the endeavors I’m most proud of—crafted with passion, collaboration, and purpose."
     >
-      <ul
-        role="list"
-        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-      >
-        {projects.map((project) => (
-          <Card as="li" key={project.name}>
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+      <section aria-labelledby="case-studies">
+        <h2
+          id="case-studies"
+          className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100"
+        >
+          Case studies
+        </h2>
+        <ul
+          role="list"
+          className="mt-10 grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2"
+        >
+          {caseStudies.map((caseStudy) => (
+            <Card as="li" key={caseStudy.slug}>
               <Image
-                src={project.logo}
-                alt=""
-                className="h-8 w-8"
-                unoptimized
+                src={caseStudy.cover}
+                alt={caseStudy.coverAlt}
+                sizes="(min-width: 1024px) 30rem, (min-width: 640px) 50vw, 100vw"
+                placeholder="blur"
+                className="relative z-10 aspect-[8/5] w-full rounded-2xl object-cover ring-1 ring-zinc-900/5 dark:ring-white/10"
               />
-            </div>
-            <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
-            </h2>
-            <Card.Description>{project.description}</Card.Description>
-            <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-              <LinkIcon className="h-6 w-6 flex-none" />
-              <span className="ml-2">{project.link.label}</span>
-            </p>
-          </Card>
-        ))}
-      </ul>
+              <p className="relative z-10 mt-6 text-sm text-zinc-500 dark:text-zinc-400">
+                {caseStudy.client}
+              </p>
+              <h3 className="mt-1 text-lg font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+                <Card.Link href={`/projects/${caseStudy.slug}`}>
+                  {caseStudy.title}
+                </Card.Link>
+              </h3>
+              <Card.Description>{caseStudy.summary}</Card.Description>
+              <Card.Cta>Read the case study</Card.Cta>
+            </Card>
+          ))}
+        </ul>
+      </section>
+      <section aria-labelledby="more-work" className="mt-24 sm:mt-32">
+        <h2
+          id="more-work"
+          className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100"
+        >
+          More work
+        </h2>
+        <ul
+          role="list"
+          className="mt-10 grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {moreProjects.map((project) => (
+            <Card as="li" key={project.name}>
+              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                <Image
+                  src={project.logo}
+                  alt=""
+                  sizes="2rem"
+                  className="h-8 w-8"
+                />
+              </div>
+              <h3 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                <Card.Link href={project.link.href}>{project.name}</Card.Link>
+              </h3>
+              <Card.Description>{project.description}</Card.Description>
+              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+                <LinkIcon className="h-6 w-6 flex-none" />
+                <span className="ml-2">{project.link.label}</span>
+              </p>
+            </Card>
+          ))}
+        </ul>
+      </section>
     </SimpleLayout>
   )
 }
