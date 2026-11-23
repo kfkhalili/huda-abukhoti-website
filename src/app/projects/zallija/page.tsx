@@ -24,7 +24,7 @@ export default function Zallija() {
   return (
     <CaseStudyLayout
       slug="zallija"
-      lead="Launching a browser studio for geometric patterns on Instagram, with no budget."
+      lead="The brand guide and the Instagram launch of a browser studio for geometric patterns."
       facts={[
         { label: 'Role', value: 'Co-founder, brand and social media' },
         {
@@ -49,58 +49,6 @@ export default function Zallija() {
         { label: 'Year', value: '2026' },
       ]}
     >
-      <CaseStudySection title="The brief">
-        <Text>
-          Launch a new product on Instagram with no budget: make historic
-          geometric patterns feel approachable, and send people to zallija.com.
-        </Text>
-      </CaseStudySection>
-      <CaseStudySection title="The look">
-        <Text>
-          A cream base, a bold headline panel, a swipe chip and a progress bar,
-          so every carousel is recognisable in the feed before anyone reads the
-          name.
-        </Text>
-        <FigureGrid columns={2}>
-          <Figure
-            image={whatIsZallija}
-            alt="Carousel cover titled What is Zallija? A photo of a blue, turquoise and gold tiled window in Bursa above a cream headline panel."
-            caption="Explainer. Photo on the slide: Mustafa Duman, CC BY 3.0, cropped."
-            sizes={postSizes}
-            preload
-          />
-          <Figure
-            image={coloringBook}
-            alt="Carousel cover titled 500 years old. Ready to color. The Topkapı Scroll coloring book with a blue and white star pattern."
-            caption="Product launch."
-            sizes={postSizes}
-          />
-          <Figure
-            image={isfahanStar}
-            alt="Carousel cover titled Draw the 1453 Isfahan star: 8 steps, one compass, one ruler. A ten-fold star pattern in brown, tan and white."
-            caption="How-to."
-            sizes={postSizes}
-          />
-          <Figure
-            image={interior}
-            alt="Carousel cover titled One pattern. Five rooms. An illustrated living room with a geometric feature wall above a teal sofa."
-            caption="Interior ideas."
-            sizes={postSizes}
-          />
-        </FigureGrid>
-      </CaseStudySection>
-      <CaseStudySection title="The result so far">
-        <p>
-          <span className="block text-5xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
-            9 <span aria-hidden="true">→</span>
-            <span className="sr-only">to</span> 307
-          </span>
-          <span className="mt-4 block max-w-2xl text-base text-zinc-600 dark:text-zinc-400">
-            followers on @zallijaart in four weeks, from 25 October to 22
-            November 2026.
-          </span>
-        </p>
-      </CaseStudySection>
       <CaseStudySection title="The brand guide">
         <Text>
           Zellige is cut and set one tile at a time, and the 44-page brand guide
@@ -110,6 +58,7 @@ export default function Zallija() {
         <Figure
           image={guideCover}
           alt="Cover of the Zallija brand guide: pale lines of a geometric pattern on dark ink, one tile filled in orange at the top right, and the Zallija logo in cream at the bottom left."
+          preload
         />
         <Text>
           The patterns come from Zallija’s Alhambra coloring book, drawn as thin
@@ -132,6 +81,41 @@ export default function Zallija() {
             image={guideColour}
             alt="Guide page titled One glaze per layout: four pale panels in cobalt, sandstone, turquoise and gold, each with a pattern drawn in lines of its own colour and one tile filled in."
             caption="The colour rule."
+            sizes={postSizes}
+          />
+        </FigureGrid>
+      </CaseStudySection>
+      <CaseStudySection title="Social media">
+        <Text>
+          The brief: launch a new product on Instagram with no budget, make
+          historic geometric patterns feel approachable, and send people to
+          zallija.com. Every carousel has a cream base, a bold headline panel, a
+          swipe chip and a progress bar, so it is recognisable in the feed
+          before anyone reads the name.
+        </Text>
+        <FigureGrid columns={2}>
+          <Figure
+            image={whatIsZallija}
+            alt="Carousel cover titled What is Zallija? A photo of a blue, turquoise and gold tiled window in Bursa above a cream headline panel."
+            caption="Explainer. Photo on the slide: Mustafa Duman, CC BY 3.0, cropped."
+            sizes={postSizes}
+          />
+          <Figure
+            image={coloringBook}
+            alt="Carousel cover titled 500 years old. Ready to color. The Topkapı Scroll coloring book with a blue and white star pattern."
+            caption="Product launch."
+            sizes={postSizes}
+          />
+          <Figure
+            image={isfahanStar}
+            alt="Carousel cover titled Draw the 1453 Isfahan star: 8 steps, one compass, one ruler. A ten-fold star pattern in brown, tan and white."
+            caption="How-to."
+            sizes={postSizes}
+          />
+          <Figure
+            image={interior}
+            alt="Carousel cover titled One pattern. Five rooms. An illustrated living room with a geometric feature wall above a teal sofa."
+            caption="Interior ideas."
             sizes={postSizes}
           />
         </FigureGrid>
