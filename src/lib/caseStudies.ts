@@ -22,10 +22,11 @@ export interface CaseStudy {
   colour: { background: string; foreground: string }
   cover: StaticImageData
   coverAlt: string
-  // The logo (the horizontal one where the brand has it), in one colour that
-  // sits on `colour.background`. The homepage cover shows it whole instead of
-  // a crop of the cover.
+  // The logo (the horizontal one where the brand has it). The homepage cover
+  // shows it whole instead of a crop of the cover, on `logoBackground` if set,
+  // otherwise on `colour.background`.
   logo?: StaticImageData
+  logoBackground?: string
 }
 
 // The case studies shown as cards on the Projects page, in this order. It is
@@ -57,7 +58,9 @@ export const caseStudies: Array<CaseStudy> = [
     cover: alBasmaCover,
     coverAlt:
       'Three Al Basma Foundation posts in navy, sky blue and yellow, side by side.',
+    // The logo keeps its own blues, which need white behind them.
     logo: alBasmaLogo,
+    logoBackground: '#ffffff',
   },
   {
     slug: 'justhome',

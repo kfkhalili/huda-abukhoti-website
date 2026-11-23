@@ -272,8 +272,8 @@ export function HomeBook({
                         Artist, Designer, and Storyteller.
                       </p>
                       <p className="mt-3 max-w-md text-zinc-600 dark:text-zinc-400">
-                        Brand identity, brand guides and social media, in Arabic
-                        and English.
+                        Brand identity, brand guides and social media, in Arabic,
+                        English and German.
                       </p>
                       <p className="mt-5 hidden items-center gap-2 text-sm text-zinc-500 lg:flex">
                         Scroll to turn the page
@@ -298,8 +298,18 @@ export function HomeBook({
                             className="group block w-full text-left"
                           >
                             <span
-                              className="block overflow-hidden rounded-xl"
-                              style={{ backgroundColor: item.background }}
+                              className={clsx(
+                                'block overflow-hidden rounded-xl',
+                                // A white card needs an edge on the white page.
+                                item.logo &&
+                                  item.logoBackground &&
+                                  'ring-1 ring-ink/10 ring-inset',
+                              )}
+                              style={{
+                                backgroundColor:
+                                  (item.logo && item.logoBackground) ||
+                                  item.background,
+                              }}
                             >
                               {item.logo ? (
                                 // The whole logo, never cropped.
