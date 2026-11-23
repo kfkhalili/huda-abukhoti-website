@@ -70,3 +70,16 @@
   --text-9xl: 8rem;
   --text-9xl--line-height: 1;
 }
+
+/* On large screens the homepage book settles on a whole page when scrolling
+   stops. HomeBook adds the class and one snap point per page; the footer is
+   the last stop. */
+@media (min-width: 1024px) {
+  html.book-snap {
+    scroll-snap-type: y mandatory;
+  }
+
+  html.book-snap footer {
+    scroll-snap-align: end;
+  }
+}

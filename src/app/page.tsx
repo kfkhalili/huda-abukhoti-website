@@ -41,7 +41,7 @@ const posts: Array<{ src: StaticImageData; alt: string }> = [
 const services = [
   {
     name: 'Brand identity',
-    description: 'Logo, colour and type, in Arabic and English.',
+    description: 'Logo, colour and type.',
   },
   {
     name: 'Brand guides',

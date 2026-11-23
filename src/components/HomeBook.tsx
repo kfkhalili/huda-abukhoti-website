@@ -124,6 +124,13 @@ export function HomeBook({
     [projects],
   )
 
+  // While the book is on screen, the page scroll snaps to its pages.
+  useEffect(() => {
+    let root = document.documentElement
+    root.classList.add('book-snap')
+    return () => root.classList.remove('book-snap')
+  }, [])
+
   useEffect(() => {
     let frame = 0
 
@@ -212,6 +219,16 @@ export function HomeBook({
       className="relative lg:h-[var(--book-height)]"
       style={{ '--book-height': `${count * 100}svh` } as React.CSSProperties}
     >
+      {/* One snap point per page: on large screens, scrolling settles on a
+          whole page instead of stopping between two (see `html.book-snap`). */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 hidden lg:block"
+      >
+        {pages.map((page) => (
+          <div key={page.key} className="h-svh snap-start" />
+        ))}
+      </div>
       <div className="lg:sticky lg:top-0 lg:h-svh lg:overflow-hidden">
         <div
           ref={strip}
@@ -520,16 +537,23 @@ export function HomeBook({
                     {chapter(index)}
                     <h2
                       id="page-about"
-                      className="mt-4 text-3xl leading-[1.05] font-semibold tracking-[-0.03em] sm:text-4xl xl:text-5xl"
+                      className="mt-4 text-4xl leading-[0.95] font-semibold tracking-[-0.04em] sm:text-5xl xl:text-6xl"
                     >
-                      I’m Huda Abukhoti. I live in Munich, where I drink coffee
-                      and make art.
+                      Huda Abukhoti
                     </h2>
+                    {/* The same lines as the top of the About page, from the CV. */}
+                    <p className="mt-4 text-xl font-medium">
+                      Graphic Designer &amp; Digital Marketer · M.A. student at
+                      TUM, Munich
+                    </p>
                     <p className="mt-6 text-lg/8 text-zinc-600 lg:hidden dark:text-zinc-400 lg:[@media(min-height:860px)]:block">
-                      Growing up, I always loved to draw and play around with
-                      Photoshop. What started as a childhood passion turned into
-                      a lifelong pursuit of creating compelling visual content —
-                      from branding and logo design to typography and beyond.
+                      Graphic designer and digital marketer with more than ten
+                      years of work in the UAE and Germany. I build brand
+                      identities, social media strategies and paid campaigns,
+                      and I design in both Arabic and English. A degree in
+                      architectural engineering taught me to work in systems; my
+                      master’s at TUM adds AI ethics and EU regulation. I make
+                      complex ideas clear for the people who have to use them.
                     </p>
                     <ul
                       role="list"
