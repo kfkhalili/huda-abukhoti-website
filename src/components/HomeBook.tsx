@@ -298,13 +298,7 @@ export function HomeBook({
                             className="group block w-full text-left"
                           >
                             <span
-                              className={clsx(
-                                'block overflow-hidden rounded-xl',
-                                // A white card needs an edge on the white page.
-                                item.logo &&
-                                  item.logoBackground &&
-                                  'ring-1 ring-ink/10 ring-inset',
-                              )}
+                              className="block overflow-hidden rounded-xl"
                               style={{
                                 backgroundColor:
                                   (item.logo && item.logoBackground) ||

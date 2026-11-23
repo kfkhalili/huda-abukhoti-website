@@ -58,9 +58,9 @@ export const caseStudies: Array<CaseStudy> = [
     cover: alBasmaCover,
     coverAlt:
       'Three Al Basma Foundation posts in navy, sky blue and yellow, side by side.',
-    // The logo keeps its own blues, which need white behind them.
+    // The logo with white lettering, on the Al Basma blue.
     logo: alBasmaLogo,
-    logoBackground: '#ffffff',
+    logoBackground: '#4c70b2',
   },
   {
     slug: 'justhome',
