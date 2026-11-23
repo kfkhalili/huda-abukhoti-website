@@ -23,7 +23,7 @@ export const caseStudies: Array<CaseStudy> = [
   {
     slug: 'medad',
     client: 'Medad, a programme of Al Jisr Foundation',
-    title: 'A name drawn as people',
+    title: 'Medad brand identity',
     summary:
       'A bilingual identity for a youth giving programme in Oman, built on an Arabic name redrawn as a human silhouette.',
     metaTitle: 'Medad brand identity',
@@ -34,7 +34,7 @@ export const caseStudies: Array<CaseStudy> = [
   {
     slug: 'al-basma-foundation',
     client: 'Al Basma Foundation',
-    title: 'One system, many causes',
+    title: 'Al Basma Foundation social media',
     summary:
       'A design system that keeps a funder’s feed recognisable across awareness days, partner projects and advocacy.',
     metaTitle: 'Al Basma Foundation social media',
@@ -45,7 +45,7 @@ export const caseStudies: Array<CaseStudy> = [
   {
     slug: 'justhome',
     client: 'Justhome, Germany',
-    title: 'A logo that is a house',
+    title: 'Justhome brand identity',
     summary:
       'A warm, trustworthy identity from 2022 for a company guiding people through buying their first home.',
     metaTitle: 'Justhome brand identity',
@@ -56,7 +56,7 @@ export const caseStudies: Array<CaseStudy> = [
   {
     slug: 'zallija',
     client: 'Zallija, co-founder',
-    title: 'A brand built in the feed',
+    title: 'Zallija brand guide and social media',
     summary:
       'Brand, visual identity and Instagram content for a browser studio for geometric patterns.',
     metaTitle: 'Zallija brand and social media',
@@ -71,7 +71,7 @@ const moreCaseStudies: Array<CaseStudy> = [
   {
     slug: 'halal-ada',
     client: 'Halal ADA, Cardano stake pool',
-    title: 'Where halal meets ADA',
+    title: 'Halal ADA logo and brand guide',
     summary:
       'A logo that reads halal above and ADA below, and a bilingual brand guide built on the line where they meet.',
     metaTitle: 'Halal ADA brand identity',
