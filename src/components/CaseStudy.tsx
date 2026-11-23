@@ -5,6 +5,7 @@ import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
+import { HeaderColour } from '@/components/HeaderColour'
 import { caseStudies, getCaseStudy } from '@/lib/caseStudies'
 
 const imageStyles = 'ring-1 ring-zinc-900/5 dark:ring-white/10'
@@ -33,7 +34,7 @@ export function CaseStudyLayout({
   facts: Array<{ label: string; value: React.ReactNode }>
   children: React.ReactNode
 }) {
-  let { client, title } = getCaseStudy(slug)
+  let { client, title, colour } = getCaseStudy(slug)
   let index = caseStudies.findIndex((item) => item.slug === slug)
   let next =
     caseStudies.length > 1
@@ -41,67 +42,79 @@ export function CaseStudyLayout({
       : null
 
   return (
-    <Container className="mt-16 sm:mt-24">
+    <>
       <article>
-        <Link
-          href="/projects"
-          className="group -ml-1 inline-flex items-center text-sm font-medium text-zinc-500 transition hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-400"
+        <HeaderColour
+          background={colour.background}
+          foreground={colour.foreground}
         >
-          <ArrowIcon className="mr-1 h-4 w-4 rotate-180 stroke-current" />
-          All projects
-        </Link>
-        <header className="mt-8 max-w-3xl">
-          <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
-            {client}
-          </p>
-          <h1 className="mt-3 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            {title}
-          </h1>
-          <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400">
-            {lead}
-          </p>
-        </header>
-        <dl className="mt-10 grid grid-cols-1 gap-x-8 gap-y-6 border-t border-zinc-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 dark:border-zinc-700/40">
-          {facts.map((fact) => (
-            <div key={fact.label}>
-              <dt className="text-sm font-semibold text-zinc-800 dark:text-zinc-100">
-                {fact.label}
-              </dt>
-              <dd className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                {fact.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
-        <div className="mt-12 space-y-20 sm:mt-16 sm:space-y-28">
-          {children}
-        </div>
-      </article>
-      <div className="mt-24 flex flex-col gap-12 border-t border-zinc-100 pt-12 sm:flex-row sm:items-end sm:justify-between dark:border-zinc-700/40">
-        <div>
-          <p className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
-            Let’s make something clear.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-4">
-            <Button href="/schedule">Book a call</Button>
-            <Button href="mailto:hudaabukhoti@gmail.com" variant="secondary">
-              Email me
-            </Button>
+          <div
+            className="-mt-16 pt-28 pb-16 sm:-mt-20 sm:pt-36 sm:pb-20"
+            style={{
+              backgroundColor: colour.background,
+              color: colour.foreground,
+            }}
+          >
+            <Container>
+              <Link
+                href="/projects"
+                className="group -ml-1 inline-flex items-center text-sm font-medium opacity-75 transition hover:opacity-100"
+              >
+                <ArrowIcon className="mr-1 h-4 w-4 rotate-180 stroke-current" />
+                All projects
+              </Link>
+              <header className="mt-8 max-w-3xl">
+                <p className="text-sm font-medium opacity-75">{client}</p>
+                <h1 className="mt-3 text-4xl leading-[1.02] font-semibold tracking-[-0.04em] sm:text-6xl">
+                  {title}
+                </h1>
+                <p className="mt-6 text-lg opacity-85">{lead}</p>
+              </header>
+              <dl className="mt-12 grid grid-cols-1 gap-x-8 gap-y-6 border-t border-current/20 pt-8 sm:grid-cols-2 lg:grid-cols-4">
+                {facts.map((fact) => (
+                  <div key={fact.label}>
+                    <dt className="text-sm font-semibold">{fact.label}</dt>
+                    <dd className="mt-1 text-sm opacity-80">{fact.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </Container>
           </div>
+        </HeaderColour>
+        <Container className="mt-16 sm:mt-24">
+          <div className="space-y-20 sm:space-y-28">{children}</div>
+        </Container>
+      </article>
+      <Container>
+        <div className="mt-24 flex flex-col gap-12 border-t border-ink/10 pt-12 sm:flex-row sm:items-end sm:justify-between dark:border-white/10">
+          <div>
+            <p className="text-2xl font-semibold tracking-tight text-ink dark:text-zinc-100">
+              Let’s make something clear.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-4">
+              <Button href="/schedule">Book a call</Button>
+              <Button href="mailto:hudaabukhoti@gmail.com" variant="secondary">
+                Email me
+              </Button>
+            </div>
+          </div>
+          {next && (
+            <Link
+              href={`/projects/${next.slug}`}
+              className="group sm:text-right"
+            >
+              <span className="block text-sm text-zinc-500 dark:text-zinc-400">
+                Next case study
+              </span>
+              <span className="mt-1 inline-flex items-center text-base font-semibold text-ink transition group-hover:text-accent-500 dark:text-zinc-100 dark:group-hover:text-accent-400">
+                {next.title}
+                <ArrowIcon className="ml-1 h-4 w-4 stroke-current" />
+              </span>
+            </Link>
+          )}
         </div>
-        {next && (
-          <Link href={`/projects/${next.slug}`} className="group sm:text-right">
-            <span className="block text-sm text-zinc-500 dark:text-zinc-400">
-              Next case study
-            </span>
-            <span className="mt-1 inline-flex items-center text-base font-semibold text-zinc-800 transition group-hover:text-teal-500 dark:text-zinc-100 dark:group-hover:text-teal-400">
-              {next.title}
-              <ArrowIcon className="ml-1 h-4 w-4 stroke-current" />
-            </span>
-          </Link>
-        )}
-      </div>
-    </Container>
+      </Container>
+    </>
   )
 }
 
@@ -229,7 +242,7 @@ export function ExternalLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="font-medium text-zinc-800 underline decoration-zinc-300 underline-offset-4 transition hover:text-teal-500 hover:decoration-teal-500 dark:text-zinc-200 dark:decoration-zinc-600 dark:hover:text-teal-400"
+      className="font-medium underline decoration-current/40 underline-offset-4 transition hover:decoration-current"
     >
       {children}
       <span className="sr-only"> (opens in a new tab)</span>

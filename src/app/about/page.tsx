@@ -154,9 +154,9 @@ function ContactLink({
     <li className="border-b border-ink/15 dark:border-white/15">
       <Link
         href={href}
-        className="group flex items-center gap-4 py-3.5 text-sm font-medium text-ink transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-400"
+        className="group flex items-center gap-4 py-3.5 text-sm font-medium text-ink transition hover:text-accent-500 dark:text-zinc-200 dark:hover:text-accent-400"
       >
-        <Icon className="h-5 w-5 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+        <Icon className="h-5 w-5 flex-none fill-zinc-500 transition group-hover:fill-accent-500" />
         {children}
       </Link>
     </li>
@@ -244,7 +244,7 @@ export default function About() {
         {numbers.map((item) => (
           <div
             key={item.label}
-            className="flex flex-col bg-white px-6 py-8 dark:bg-zinc-900"
+            className="flex flex-col bg-paper px-6 py-8 dark:bg-[#121110]"
           >
             <dt className="order-2 mt-3 text-sm text-zinc-600 dark:text-zinc-400">
               {item.label}
@@ -293,7 +293,7 @@ export default function About() {
                     <li key={point} className="flex gap-3">
                       <span
                         aria-hidden="true"
-                        className="mt-2.5 h-1 w-1 flex-none rounded-full bg-teal-500 dark:bg-teal-400"
+                        className="mt-2.5 h-1 w-1 flex-none rounded-full bg-accent-500 dark:bg-accent-400"
                       />
                       {point}
                     </li>

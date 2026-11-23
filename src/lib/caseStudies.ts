@@ -13,6 +13,9 @@ export interface CaseStudy {
   title: string
   summary: string
   metaTitle: string
+  year: string
+  // The main colour of the cover, used for the project's page and card.
+  colour: { background: string; foreground: string }
   cover: StaticImageData
   coverAlt: string
 }
@@ -22,6 +25,8 @@ export interface CaseStudy {
 export const caseStudies: Array<CaseStudy> = [
   {
     slug: 'medad',
+    year: '2025',
+    colour: { background: '#372264', foreground: '#f6f3ee' },
     client: 'Medad, a programme of Al Jisr Foundation',
     title: 'Medad brand identity',
     summary:
@@ -33,6 +38,8 @@ export const caseStudies: Array<CaseStudy> = [
   },
   {
     slug: 'al-basma-foundation',
+    year: '2026',
+    colour: { background: '#a7d2ea', foreground: '#1f2531' },
     client: 'Al Basma Foundation',
     title: 'Al Basma Foundation social media',
     summary:
@@ -44,6 +51,8 @@ export const caseStudies: Array<CaseStudy> = [
   },
   {
     slug: 'justhome',
+    year: '2022',
+    colour: { background: '#86bfb0', foreground: '#14302a' },
     client: 'Justhome, Germany',
     title: 'Justhome brand identity',
     summary:
@@ -55,6 +64,8 @@ export const caseStudies: Array<CaseStudy> = [
   },
   {
     slug: 'zallija',
+    year: '2026',
+    colour: { background: '#102b34', foreground: '#f6f3ee' },
     client: 'Zallija, co-founder',
     title: 'Zallija brand guide and social media',
     summary:
@@ -70,6 +81,8 @@ export const caseStudies: Array<CaseStudy> = [
 const moreCaseStudies: Array<CaseStudy> = [
   {
     slug: 'halal-ada',
+    year: '2026',
+    colour: { background: '#333634', foreground: '#f6f3ee' },
     client: 'Halal ADA, Cardano stake pool',
     title: 'Halal ADA logo and brand guide',
     summary:

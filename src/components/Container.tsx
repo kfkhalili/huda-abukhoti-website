@@ -37,3 +37,19 @@ export const Container = forwardRef<
     </ContainerOuter>
   )
 })
+
+export const ContainerWide = forwardRef<
+  React.ElementRef<'div'>,
+  React.ComponentPropsWithoutRef<'div'>
+>(function ContainerWide({ className, ...props }, ref) {
+  return (
+    <div
+      ref={ref}
+      className={clsx(
+        'mx-auto w-full max-w-[90rem] px-5 sm:px-8 lg:px-12',
+        className,
+      )}
+      {...props}
+    />
+  )
+})
