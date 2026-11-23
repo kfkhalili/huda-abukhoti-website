@@ -7,6 +7,7 @@ import { caseStudies } from '@/lib/caseStudies'
 import logoTrendOnSocial from '@/images/logos/trend-on-social.png'
 import logoAlJisr from '@/images/logos/al-jisr-foundation.png'
 import logoAzm from '@/images/logos/azm.png'
+import logoHalalAda from '@/images/logos/halal-ada.png'
 
 const moreProjects = [
   {
@@ -35,6 +36,13 @@ const moreProjects = [
       "Created engaging and visually appealing social media content to reflect Azm's brand messaging to empower people with disabilities.",
     link: { href: 'https://www.instagram.com/azm.brand/', label: 'instagram' },
     logo: logoAzm,
+  },
+  {
+    name: 'Halal ADA',
+    description:
+      'Typography and logo design, plus a bilingual brand guide, for a fintech crypto initiative.',
+    link: { href: '/projects/halal-ada', label: 'case study' },
+    logo: logoHalalAda,
   },
 ]
 

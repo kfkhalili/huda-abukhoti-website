@@ -17,7 +17,8 @@ export interface CaseStudy {
   coverAlt: string
 }
 
-// The order here is the order on the Projects page and of the "Next" links.
+// The case studies shown as cards on the Projects page, in this order. It is
+// also the order of the "Next case study" links.
 export const caseStudies: Array<CaseStudy> = [
   {
     slug: 'medad',
@@ -31,17 +32,6 @@ export const caseStudies: Array<CaseStudy> = [
       'The Medad logo in white on deep violet, with an illustrated hand pointing to it.',
   },
   {
-    slug: 'halal-ada',
-    client: 'Halal ADA, Cardano stake pool',
-    title: 'Where halal meets ADA',
-    summary:
-      'A logo that reads halal above and ADA below, and a bilingual brand guide built on the line where they meet.',
-    metaTitle: 'Halal ADA brand identity',
-    cover: halalAdaCover,
-    coverAlt:
-      'The Halal ADA mark in cream, very large, on a gradient from mint to charcoal, with the logo at the bottom right.',
-  },
-  {
     slug: 'al-basma-foundation',
     client: 'Al Basma Foundation',
     title: 'One system, many causes',
@@ -51,17 +41,6 @@ export const caseStudies: Array<CaseStudy> = [
     cover: alBasmaCover,
     coverAlt:
       'Three Al Basma Foundation posts in navy, sky blue and yellow, side by side.',
-  },
-  {
-    slug: 'zallija',
-    client: 'Zallija, co-founder',
-    title: 'A brand built in the feed',
-    summary:
-      'Brand, visual identity and Instagram content for a browser studio for geometric patterns.',
-    metaTitle: 'Zallija brand and social media',
-    cover: zallijaCover,
-    coverAlt:
-      'Cover of the Zallija brand guide: pale pattern lines on dark ink, one tile filled in orange, and the Zallija logo in cream.',
   },
   {
     slug: 'justhome',
@@ -74,10 +53,38 @@ export const caseStudies: Array<CaseStudy> = [
     coverAlt:
       'The Justhome J icon, a white circle and a tall white J, on morning green.',
   },
+  {
+    slug: 'zallija',
+    client: 'Zallija, co-founder',
+    title: 'A brand built in the feed',
+    summary:
+      'Brand, visual identity and Instagram content for a browser studio for geometric patterns.',
+    metaTitle: 'Zallija brand and social media',
+    cover: zallijaCover,
+    coverAlt:
+      'Cover of the Zallija brand guide: pale pattern lines on dark ink, one tile filled in orange, and the Zallija logo in cream.',
+  },
+]
+
+// Case studies that keep their own page but are listed under "More work".
+const moreCaseStudies: Array<CaseStudy> = [
+  {
+    slug: 'halal-ada',
+    client: 'Halal ADA, Cardano stake pool',
+    title: 'Where halal meets ADA',
+    summary:
+      'A logo that reads halal above and ADA below, and a bilingual brand guide built on the line where they meet.',
+    metaTitle: 'Halal ADA brand identity',
+    cover: halalAdaCover,
+    coverAlt:
+      'The Halal ADA mark in cream, very large, on a gradient from mint to charcoal, with the logo at the bottom right.',
+  },
 ]
 
 export function getCaseStudy(slug: string) {
-  let caseStudy = caseStudies.find((item) => item.slug === slug)
+  let caseStudy = [...caseStudies, ...moreCaseStudies].find(
+    (item) => item.slug === slug,
+  )
 
   if (!caseStudy) {
     throw new Error(`Unknown case study: ${slug}`)
