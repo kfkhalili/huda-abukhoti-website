@@ -3,6 +3,7 @@ import { type StaticImageData } from 'next/image'
 
 import alBasmaCover from '@/images/case-studies/al-basma/cover.jpg'
 import halalAdaCover from '@/images/case-studies/halal-ada/cover.jpg'
+import justhomeCover from '@/images/case-studies/justhome/cover.jpg'
 import medadCover from '@/images/case-studies/medad/cover.jpg'
 import zallijaCover from '@/images/case-studies/zallija/cover.jpg'
 
@@ -60,7 +61,18 @@ export const caseStudies: Array<CaseStudy> = [
     metaTitle: 'Zallija brand and social media',
     cover: zallijaCover,
     coverAlt:
-      'Three Zallija carousel covers with geometric patterns and bold headlines, side by side.',
+      'Cover of the Zallija brand guide: pale pattern lines on dark ink, one tile filled in orange, and the Zallija logo in cream.',
+  },
+  {
+    slug: 'justhome',
+    client: 'Justhome, Germany',
+    title: 'A logo that is a house',
+    summary:
+      'A warm, trustworthy identity from 2022 for a company guiding people through buying their first home.',
+    metaTitle: 'Justhome brand identity',
+    cover: justhomeCover,
+    coverAlt:
+      'The Justhome J icon, a white circle and a tall white J, on morning green.',
   },
 ]
 
