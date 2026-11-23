@@ -415,24 +415,27 @@ export function HomeBook({
                   aria-labelledby="page-posts"
                   className={clsx(
                     pageClass,
-                    'flex flex-col justify-center gap-8 bg-accent-50 text-ink dark:bg-[#1b1a18] dark:text-zinc-100',
+                    'flex flex-col justify-center gap-8 bg-accent-50 text-ink lg:flex-row lg:items-center lg:gap-12 dark:bg-[#1b1a18] dark:text-zinc-100',
                   )}
                 >
-                  <div>
+                  {/* On large screens the heading sits on the left, so the
+                      posts can use the rest of the width. */}
+                  <div className="lg:w-64 lg:shrink-0 xl:w-80">
                     {chapter(index)}
                     <h2
                       id="page-posts"
-                      className="mt-4 text-4xl leading-[0.95] font-semibold tracking-[-0.04em] sm:text-5xl xl:text-6xl"
+                      className="mt-4 text-4xl leading-[0.95] font-semibold tracking-[-0.04em] sm:text-5xl lg:text-4xl xl:text-5xl"
                     >
                       Posts, packaging and illustration
                     </h2>
                   </div>
-                  {/* Posts keep their 4:5 shape. On large screens the grid
-                      narrows so two rows fit above the page bar: each post is
-                      at most 40svh − 151px wide, five per row. */}
+                  {/* Posts keep their 4:5 shape and fill the width beside the
+                      heading. On short screens they shrink so two rows still
+                      fit above the page bar: at most 40svh − 96px wide each,
+                      five per row. */}
                   <ul
                     role="list"
-                    className="grid grid-cols-2 gap-3 sm:grid-cols-5 lg:max-w-[calc(200svh_-_691px)] lg:gap-4"
+                    className="grid grid-cols-2 gap-3 sm:grid-cols-5 lg:ml-auto lg:max-w-[calc(200svh_-_416px)] lg:min-w-0 lg:flex-1 lg:gap-4"
                   >
                     {posts.map((post) => (
                       <li

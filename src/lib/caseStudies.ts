@@ -69,7 +69,7 @@ export const caseStudies: Array<CaseStudy> = [
     client: 'Justhome, Germany',
     title: 'Justhome brand identity',
     summary:
-      'A warm, trustworthy identity from 2022 for a company guiding people through buying their first home.',
+      'A warm, trustworthy identity for a company guiding people through buying their first home.',
     metaTitle: 'Justhome brand identity',
     cover: justhomeCover,
     coverAlt:

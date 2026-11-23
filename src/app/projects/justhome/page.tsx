@@ -21,7 +21,7 @@ export default function Justhome() {
   return (
     <CaseStudyLayout
       slug="justhome"
-      lead="A warm, trustworthy identity from 2022 for a company guiding people through buying their first home, built on a wordmark with a roof line."
+      lead="A warm, trustworthy identity for a company guiding people through buying their first home, built on a wordmark with a roof line."
       facts={[
         { label: 'Client', value: 'Justhome, Germany' },
         {
